@@ -1,0 +1,22 @@
+#!/bin/sh
+
+CONFIGURATION_FILE=$(pwd)/config
+
+case "$1" in
+add)
+	scripts/add-entry $CONFIGURATION_FILE $2 ${@:3}
+	;;
+exists)
+	scripts/exists-entry $CONFIGURATION_FILE $2
+	;;
+read)
+	scripts/read-entry $CONFIGURATION_FILE $2
+	;;
+delete)
+	scripts/delete-entry $CONFIGURATION_FILE $2
+	;;
+*)
+	echo "Usage: $0 {add <key> <value>|exists <key>|read <key>|delete <key>}"
+esac
+
+exit 0

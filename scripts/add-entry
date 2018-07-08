@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ $# -lt 3 ]
+then
+	echo "ADD: not enough parameters"
+	exit 1
+fi
+
+scripts/delete-entry $1 $2
+echo "$2=${@:3}" >> $1

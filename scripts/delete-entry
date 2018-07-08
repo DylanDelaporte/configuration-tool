@@ -1,0 +1,15 @@
+#!/bin/sh
+
+if [ $# -lt 2 ]
+then
+	echo "DELETE: not enough parameters"
+	exit 1
+fi
+
+if [ -f $1 ]
+then
+	grep -vwE "$2=*" $1 > config2
+
+	rm $1
+	mv config2 $1
+fi
