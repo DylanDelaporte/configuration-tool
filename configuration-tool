@@ -1,6 +1,6 @@
 #!/bin/sh
 
-CONFIGURATION_FILE=$(pwd)/config
+CONFIGURATION_FILE=$(head -n 1 path_config)
 
 case "$1" in
 add)
